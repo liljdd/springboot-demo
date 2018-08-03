@@ -2,7 +2,7 @@ package com.ant.entity;
 
 import java.util.Date;
 
-public class UserBean {
+public class User {
     private Integer uid;
 
     private String username;
