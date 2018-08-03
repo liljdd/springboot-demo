@@ -4,7 +4,9 @@ import com.ant.entity.User;
 import com.ant.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author lilj
@@ -17,13 +19,13 @@ public class UserController {
     private UserService userService;
 
     @ResponseBody
-    @PostMapping("/add")
+    @RequestMapping("/add")
     public int addUser(User user) {
         return userService.addUser(user);
     }
 
     @ResponseBody
-    @GetMapping("/all")
+    @RequestMapping("/all")
     public Object findAllUser(@RequestParam(name = "pageNum", required = false, defaultValue = "1") int pageNum,
                               @RequestParam(name = "pageSize", required = false, defaultValue = "10") int pageSize) {
         return userService.findAllUser(pageNum, pageSize);
