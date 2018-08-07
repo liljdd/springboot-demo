@@ -12,6 +12,8 @@ public class Teacher {
 
     private Short age;
 
+    private Date entrytime;
+
     private BigDecimal salary;
 
     private Date createdtime;
@@ -46,6 +48,14 @@ public class Teacher {
 
     public void setAge(Short age) {
         this.age = age;
+    }
+
+    public Date getEntrytime() {
+        return entrytime;
+    }
+
+    public void setEntrytime(Date entrytime) {
+        this.entrytime = entrytime;
     }
 
     public BigDecimal getSalary() {
