@@ -64,7 +64,7 @@
         <include refid="BASE_COLUMN"/>
         from
         <include refid="BASE_TABLE"/>
-        where id = #{id,jdbcType=INTEGER}
+        where uid = #{id,jdbcType=INTEGER}
     </select>
 
 </mapper>
