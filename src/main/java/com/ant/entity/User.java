@@ -1,5 +1,8 @@
 package com.ant.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.util.Date;
 
 public class User {
@@ -9,6 +12,7 @@ public class User {
 
     private Integer age;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createdtime;
 
     public Integer getUid() {
@@ -41,5 +45,10 @@ public class User {
 
     public void setCreatedtime(Date createdtime) {
         this.createdtime = createdtime;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 }
