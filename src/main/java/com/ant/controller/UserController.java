@@ -2,6 +2,7 @@ package com.ant.controller;
 
 import com.ant.entity.User;
 import com.ant.service.UserService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -28,8 +29,8 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/all")
-    public Object findAllUser(@RequestParam(name = "pageNum", required = false, defaultValue = "1") int pageNum,
-                              @RequestParam(name = "pageSize", required = false, defaultValue = "10") int pageSize) {
+    public PageInfo<User> findAllUser(@RequestParam(name = "pageNum", required = false, defaultValue = "1") int pageNum,
+                                      @RequestParam(name = "pageSize", required = false, defaultValue = "10") int pageSize) {
         return userService.findAllUser(pageNum, pageSize);
     }
 

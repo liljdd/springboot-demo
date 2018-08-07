@@ -10,13 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 它会扫描 com.ant.controller 和 com.ant.controller.* 里面的所有的 ；
  * 还有一种解决方案是 在启动类的上面添加 @ComponentScan(basePackages = {"com.ant.*"})
  */
-
 @SpringBootApplication
 @MapperScan("com.ant.mapper")
 public class SpringbootDemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringbootDemoApplication.class, args);
     }
-
-
 }
