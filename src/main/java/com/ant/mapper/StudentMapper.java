@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * 通用mapper不能使用
+ */
 @Repository
 public interface StudentMapper extends BaseMapper<Student> {
   /*  int deleteByPrimaryKey(Integer id);
