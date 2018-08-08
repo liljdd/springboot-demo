@@ -53,7 +53,7 @@
         </trim>
     </insert>
 
-    <select id="selectUsers" resultType="com.ant.entity.User">
+    <select id="selectAll" resultType="com.ant.entity.User">
         SELECT
         <include refid="BASE_COLUMN"/>
         FROM

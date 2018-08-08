@@ -13,7 +13,7 @@ public interface UserMapper {
 
     int insertSelective(User record);
 
-    List<User> selectUsers();
+    List<User> selectAll();
 
     User selectByPrimaryKey(Integer id);
 }

@@ -30,12 +30,12 @@ public class UserService {
     public PageInfo<User> findAllUser(int pageNum, int pageSize) {
         //将参数传给这个方法就可以实现物理分页了，非常简单。
         PageHelper.startPage(pageNum, pageSize);
-        List<User> list = userMapper.selectUsers();
+        List<User> list = userMapper.selectAll();
         PageInfo result = new PageInfo(list);
         return result;
     }
 
-    public User findById(int id){
+    public User findById(int id) {
         return userMapper.selectByPrimaryKey(id);
     }
 }

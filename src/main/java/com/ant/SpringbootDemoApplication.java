@@ -3,6 +3,7 @@ package com.ant;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @MapperScan("com.ant.mapper") 将项目中对应的mapper(dao)类的路径加进来
@@ -11,6 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 还有一种解决方案是 在启动类的上面添加 @ComponentScan(basePackages = {"com.ant.*"})
  */
 @SpringBootApplication
+//启用注解事务管理
+@EnableTransactionManagement
 @MapperScan("com.ant.mapper")
 public class SpringbootDemoApplication {
     public static void main(String[] args) {

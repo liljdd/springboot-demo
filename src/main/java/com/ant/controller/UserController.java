@@ -7,7 +7,6 @@ import com.ant.service.UserService;
 import com.github.pagehelper.PageInfo;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping(value = "/user")
-@EnableAutoConfiguration
 public class UserController {
     /**
      * Logger for this class
@@ -40,9 +38,9 @@ public class UserController {
     public PageInfo<User> findAllUser(@RequestParam(name = "pageNum", required = false, defaultValue = "1") int pageNum,
                                       @RequestParam(name = "pageSize", required = false, defaultValue = "10") int pageSize) {
         PageInfo<User> page = userService.findAllUser(pageNum, pageSize);
-        logger.info("==="+page);
+        logger.info("===" + page);
         String s = JSONObject.toJSONString(page, SerializerFeature.WriteDateUseDateFormat);
-        logger.info("========="+s);
+        logger.info("=========" + s);
         System.out.println(s);
         return page;
     }
