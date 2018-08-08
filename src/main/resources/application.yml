@@ -38,6 +38,11 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
   type-aliases-package: com.ant.entity  # 注意：对应实体类的路径
 
+#通用mapper
+mapper:
+    mappers: com.ant.support.BaseMapper
+    not-empty: false
+    identity: MYSQL
 
 #pagehelper
 pagehelper:
