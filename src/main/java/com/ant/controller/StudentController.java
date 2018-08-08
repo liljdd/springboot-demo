@@ -8,6 +8,9 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * @author lilj
@@ -25,6 +28,7 @@ public class StudentController {
     private StudentService service;
 
     @RequestMapping("detail")
+    @ResponseBody
     public JSONObject detail(Integer id){
         System.out.println("============"+id);
         Student bean = service.findById(id);
@@ -32,4 +36,11 @@ public class StudentController {
         System.out.println(s);
         return JSONObject.parseObject(s);
     }
+
+    @RequestMapping("all")
+    @ResponseBody
+    public List<Student> all(){
+        return service.findAll();
+    }
+
 }
