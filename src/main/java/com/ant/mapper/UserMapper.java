@@ -7,7 +7,6 @@ import java.util.List;
 /**
  * 不需要@Repository注解
  */
-//@Repository
 public interface UserMapper {
     int insert(User record);
 

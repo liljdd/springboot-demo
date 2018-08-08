@@ -10,9 +10,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * spring boot只会扫描启动类当前包和以下的包  。 如果将 spring boot 放在 包  com.ant.controller 里面的话 ，
  * 它会扫描 com.ant.controller 和 com.ant.controller.* 里面的所有的 ；
  * 还有一种解决方案是 在启动类的上面添加 @ComponentScan(basePackages = {"com.ant.*"})
+ *
+ * @EnableTransactionManagement 启用注解事务管理
  */
 @SpringBootApplication
-//启用注解事务管理
 @EnableTransactionManagement
 @MapperScan("com.ant.mapper")
 public class SpringbootDemoApplication {
