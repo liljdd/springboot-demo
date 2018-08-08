@@ -15,9 +15,9 @@ public class Student {
 
     private Integer age;
 
-    private Integer classid;
+    private Integer classId;
 
-    private Date createdtime;
+    private Date createdTime;
 
     private String detail;
 
@@ -45,20 +45,20 @@ public class Student {
         this.age = age;
     }
 
-    public Integer getClassid() {
-        return classid;
+    public Integer getClassId() {
+        return classId;
     }
 
-    public void setClassid(Integer classid) {
-        this.classid = classid;
+    public void setClassId(Integer classId) {
+        this.classId = classId;
     }
 
-    public Date getCreatedtime() {
-        return createdtime;
+    public Date getCreatedTime() {
+        return createdTime;
     }
 
-    public void setCreatedtime(Date createdtime) {
-        this.createdtime = createdtime;
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
 
     public String getDetail() {
