@@ -8,7 +8,7 @@
     <result column="classId" jdbcType="INTEGER" property="classId" />
     <result column="createdTime" jdbcType="TIMESTAMP" property="createdTime" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ant.entity.Student">
+  <!--<resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ant.entity.Student">
     <result column="detail" jdbcType="LONGVARCHAR" property="detail" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -18,7 +18,7 @@
     detail
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
+    select
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -30,10 +30,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.ant.entity.Student">
-    insert into student (id, name, age, 
+    insert into student (id, name, age,
       classId, createdTime, detail
       )
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
       #{classId,jdbcType=INTEGER}, #{createdTime,jdbcType=TIMESTAMP}, #{detail,jdbcType=LONGVARCHAR}
       )
   </insert>
@@ -117,5 +117,5 @@
       classId = #{classId,jdbcType=INTEGER},
       createdTime = #{createdTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
-  </update>
+  </update>-->
 </mapper>

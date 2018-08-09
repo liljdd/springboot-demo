@@ -1,9 +1,6 @@
 package com.ant.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 @Table(name = "student")
 public class Student {
@@ -14,12 +11,12 @@ public class Student {
     private String name;
 
     private Integer age;
-
+    @Column(name = "classId")
     private Integer classId;
 
-    private Date createdTime;
-
     private String detail;
+    @Column(name = "createdTime")
+    private Date createdTime;
 
     public Integer getId() {
         return id;
