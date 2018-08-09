@@ -2,14 +2,10 @@ package com.ant.mapper;
 
 import com.ant.entity.Student;
 import com.ant.support.BaseMapper;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * 通用mapper不能使用
- */
 @Repository
 public interface StudentMapper extends BaseMapper<Student> {
   /*  int deleteByPrimaryKey(Integer id);

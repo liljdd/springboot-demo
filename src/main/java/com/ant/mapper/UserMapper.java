@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * 不需要@Repository注解，没有注解 service层@Autowired会报错，但不影响
+ * 不需要@Repository注解，没有注解 service层@Autowired会报错，但不影响正常使用
  */
 @Repository
 public interface UserMapper {
