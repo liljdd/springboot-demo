@@ -84,10 +84,8 @@ public class BaseService<T> {
     }
 
     public void deleteByIds(List<Object> ids) {
-        // 声明条件
         Example example = new Example(this.clazz);
         example.createCriteria().andIn("id", ids);
-
         this.mapper.deleteByExample(example);
     }
 
