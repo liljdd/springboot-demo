@@ -30,9 +30,6 @@ public class SpringbootDemoApplicationTests {
 
     @Test
     public void studentTest01() {
-        List<Student> list = studentService.findAll();
-        Object o = JSONObject.toJSON(list);
-        System.out.println(o.toString());
     }
 
 }

@@ -24,6 +24,8 @@ public interface BaseMapper<T> extends Mapper<T>, MySqlMapper<T> {
      *
      * 4、报错：com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'class_id' in 'field list'
      *        通用mapper会把驼峰命名的classId转为表字段class_id，可用@Column(name = "classId")注明表字段
+     *
+     * 5、使用selectByPrimaryKey(Object o)，需要在主键上加注释 @Id
      */
 
 }

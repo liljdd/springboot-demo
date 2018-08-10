@@ -1,9 +1,11 @@
 package com.ant.entity;
 
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
 
 public class Teacher {
+    @Id
     private Integer id;
 
     private String name;

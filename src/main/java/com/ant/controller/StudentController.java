@@ -4,7 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.ant.entity.Student;
 import com.ant.service.StudentService;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,16 +23,16 @@ public class StudentController {
     /**
      * Logger for this class
      */
-    private static final Logger logger = Logger.getLogger(StudentController.class);
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private StudentService service;
 
     @RequestMapping("detail")
     @ResponseBody
-    public JSONObject detail(Integer id){
-        System.out.println("============"+id);
-        Student bean = service.findById(id);
+    public JSONObject detail(Integer id) {
+        System.out.println("============" + id);
+        Student bean = service.queryById(id.longValue());
         String s = JSONObject.toJSONString(bean, SerializerFeature.WriteDateUseDateFormat);
         System.out.println(s);
         return JSONObject.parseObject(s);
@@ -39,8 +40,8 @@ public class StudentController {
 
     @RequestMapping("all")
     @ResponseBody
-    public List<Student> all(){
-        return service.findAll();
+    public List<Student> all() {
+        return service.queryAll();
     }
 
 }
