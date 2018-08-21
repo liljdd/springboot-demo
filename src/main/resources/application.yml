@@ -57,3 +57,6 @@ pagehelper:
     returnPageInfo: check
 
 logging:
+    level:
+      org.springframework.web: info
+    config: classpath:logback-spring.xml
