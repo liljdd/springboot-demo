@@ -37,6 +37,8 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
   type-aliases-package: com.ant.entity  # 注意：对应实体类的路径
+  # 驼峰命名规范 如：数据库字段是  order_id 那么 实体字段就要写成 orderId
+  configuration.map-underscore-to-camel-case: true
 
 #通用mapper
 mapper:
